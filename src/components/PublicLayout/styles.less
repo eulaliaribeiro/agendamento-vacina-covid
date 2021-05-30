@@ -1,0 +1,110 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+
+  #right-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 2vh;
+
+      .create-account-message {
+        color: var(--dark-gray);
+      }
+
+      .create-account-button {
+        display: flex;
+        background: var(--dark-blue) 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px var(--third-gray);
+        border-radius: 4px;
+        opacity: 1;
+
+        width: 9vw;
+        height: 4.5vh;
+
+        margin: 0 1vw;
+        img {
+          position: inherit;
+          margin-left: 1vh;
+          align-items: center;
+        }
+        p {
+          margin: auto;
+          color: var(--white);
+        }
+      }
+    }
+  }
+}
+
+.panel {
+  width: 27%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: no-repeat;
+  background-image: url("../../assets/Login/Group 13258.png");
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  float: left;
+}
+
+.panel-content {
+  margin-top: 14vh;
+}
+
+.calendar {
+  align-items: center;
+  align-content: center;
+  margin-top: 12vh;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.p1 {
+  text-align: center;
+  color: var(--white);
+}
+
+.p2 {
+  text-align: center;
+  color: var(--text-gray);
+}
+
+footer {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 55%;
+}
+
+@media (max-height: 720px) {
+  footer {
+    padding-top: 15%;
+  }
+}
+
+@media (max-width: 720px) {
+  .create-account {
+    width: 20%;
+  }
+  /*   footer {
+    display: grid;
+    align-content: space-between;
+  } */
+}
