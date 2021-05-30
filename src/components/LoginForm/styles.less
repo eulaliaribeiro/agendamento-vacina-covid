@@ -1,11 +1,12 @@
 .login-form {
-  width: 30vw;
+  width: 24vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
 
   #login-form-title {
-    margin-top: 1rem;
+    margin: 4vh 0 1vh 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,12 +30,13 @@
       margin: 1vh 0;
 
       input {
-        width: 25vw;
+        width: 18vw;
         height: 6vh;
-        //margin-top: 1vh;
         border: 1px solid var(--second-gray);
         border-radius: 4px;
         opacity: 1;
+        font-family: inherit;
+        font-weight: 400;
       }
     }
 
@@ -42,10 +44,35 @@
       width: 100%;
       display: inline-block;
       text-align: right;
-      margin: 2vh 0 3vh 0;
+      margin: 2vh 0 1vh 0;
 
       a {
-        margin-right: 4vh;
+        text-decoration: none;
+        margin-right: 6vh;
+      }
+    }
+
+    .button-content {
+      margin: 2vh 0 6vh 0;
+      .form-button {
+        width: 18vw;
+        height: 6vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+
+        background: var(--light-blue) 0% 0% no-repeat padding-box;
+        border-radius: 4px;
+        opacity: 1;
+
+        cursor: pointer;
+
+        p {
+          margin: auto;
+          color: var(--white);
+          font-weight: bold;
+        }
       }
     }
 

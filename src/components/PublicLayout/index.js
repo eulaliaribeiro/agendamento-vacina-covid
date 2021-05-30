@@ -46,7 +46,7 @@ const PublicLayout = () => {
                         </p> 
                     </div>
                 </header>
-                <UserRegisterForm/>
+                <LoginForm/>
             </div>
 
         </div>

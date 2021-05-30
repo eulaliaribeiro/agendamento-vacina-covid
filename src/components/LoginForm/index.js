@@ -21,11 +21,13 @@ const LoginForm = () => {
               <div className="forgot-password">
                 <a href="/">Esqueceu sua senha?</a>
               </div>
-              <div className="form-button" type="submit">
-                <p>
-                  Entrar
-                </p>
-              </div>           
+              <div className="button-content">
+                <div className="form-button" type="submit">
+                  <p>
+                    Entrar
+                  </p>
+                </div>  
+              </div>
           </form>
         </div>
     );

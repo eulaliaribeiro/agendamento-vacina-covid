@@ -5,7 +5,7 @@
   justify-content: flex-start;
 
   #right-content {
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,8 +13,9 @@
     header {
       width: 100%;
       display: flex;
+      flex-direction: row;
       justify-content: flex-end;
-      margin-top: 2vh;
+      margin-top: 1vh;
 
       .create-account-message {
         color: var(--dark-gray);
@@ -22,18 +23,17 @@
 
       .create-account-button {
         display: flex;
+        flex-direction: row;
         background: var(--dark-blue) 0% 0% no-repeat padding-box;
         box-shadow: 0px 3px 6px var(--third-gray);
         border-radius: 4px;
         opacity: 1;
 
-        width: 9vw;
+        width: 6.5vw;
         height: 4.5vh;
-
-        margin: 0 1vw;
+        margin: auto 2vh;
         img {
-          position: inherit;
-          margin-left: 1vh;
+          margin: auto;
           align-items: center;
         }
         p {
@@ -46,7 +46,7 @@
 }
 
 .panel {
-  width: 27%;
+  width: 30%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -86,20 +86,20 @@
 }
 
 footer {
-  width: 85%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 55%;
 }
 
-@media (max-height: 720px) {
+@media (max-height: 690px) {
   footer {
     padding-top: 15%;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 690px) {
   .create-account {
     width: 20%;
   }
