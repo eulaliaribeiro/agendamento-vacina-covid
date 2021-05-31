@@ -8,6 +8,7 @@ const UserRegisterForm = () => {
     const [initial, setInicial] = useState(true)
     const [validateRegister, setValidateRegister] = useState(false)
     const [handleClick, setHandleClick] = useState(false)
+    
 
     const validateEmail = (e) => {
       var email = e.target.value
@@ -19,6 +20,10 @@ const UserRegisterForm = () => {
       }
       setInicial(false)
     }
+
+    //  TODO: validar campos do formulário
+    // nome só pode ser letra
+    // comparar as senhas
     
     return(
         <div className="content">
@@ -52,7 +57,7 @@ const UserRegisterForm = () => {
 
                     <label>
                         Confirmação de senha
-                        <input name="password" type="password" required={true} />
+                        <input name="password" type="password" required={true}  />
                     </label>
                 </>
                 } 

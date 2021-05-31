@@ -1,4 +1,4 @@
-.container {
+#container {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -32,6 +32,9 @@
         width: 6.5vw;
         height: 4.5vh;
         margin: auto 2vh;
+
+        cursor: pointer;
+
         img {
           margin: auto;
           align-items: center;
@@ -99,12 +102,15 @@ footer {
   }
 }
 
-@media (max-width: 690px) {
+@media (max-width: 1080px) {
+  .title {
+    font-size: 1.5rem;
+  }
   .create-account {
     width: 20%;
   }
-  /*   footer {
-    display: grid;
-    align-content: space-between;
-  } */
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
 }

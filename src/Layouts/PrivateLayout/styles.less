@@ -1,0 +1,200 @@
+#container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+
+  .sidebar {
+    width: 15%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px solid var(--light-blue);
+
+    .sidebar-content {
+      width: 82%;
+      margin-top: 2vh;
+
+      header {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+
+        .blue-calendar {
+          margin: auto;
+        }
+
+        .sidebar-title {
+          margin-left: 0.8vw;
+          font-weight: bold;
+        }
+      }
+
+      .dropdown-profile {
+        position: relative;
+        display: inline-block;
+      }
+
+      .profile-content {
+        display: flex;
+        flex-direction: row;
+        margin: 4vh 0 2vh 0;
+        cursor: pointer;
+
+        .profile-icon {
+          margin: auto;
+        }
+
+        .welcome-text {
+          margin: auto 0.35vw;
+          display: flex;
+          flex-direction: column;
+          .username {
+            margin: 0;
+            font-weight: bold;
+            color: var(--light-blue);
+          }
+        }
+
+        .arrow {
+          margin: auto;
+        }
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        width: 100%;
+        background: var(--white) 0% 0% no-repeat padding-box;
+        border: 1px solid var(--light-blue);
+        border-radius: 4px;
+        opacity: 1;
+        z-index: 1;
+        // TODO transition: all 0.2s ease-in;
+
+        .dropdown-buttons {
+          display: flex;
+          flex-direction: column;
+          margin: 1vh 0;
+
+          .my-profile-button {
+            display: flex;
+            flex-direction: row;
+            margin: 0.5vh 0.6vw;
+            cursor: pointer;
+
+            img {
+              margin: auto;
+            }
+
+            p {
+              width: 83%;
+              margin: auto;
+            }
+          }
+
+          .logout-button {
+            display: flex;
+            flex-direction: row;
+            margin: 0.5vh 0.6vw;
+            cursor: pointer;
+
+            img {
+              margin: auto;
+            }
+
+            p {
+              width: 83%;
+              margin: auto;
+            }
+          }
+        }
+      }
+
+      .dropdown-profile:hover .dropdown-content {
+        display: block;
+      }
+
+      .sidebar-buttons {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2vh;
+
+        .my-schedules-button {
+          display: flex;
+          flex-direction: row;
+          margin: 2vh 0;
+          cursor: pointer;
+
+          img {
+            margin: auto;
+          }
+
+          p {
+            width: 83%;
+            margin: auto;
+          }
+        }
+
+        .schedule-button {
+          display: flex;
+          flex-direction: row;
+          margin: 2vh 0;
+          cursor: pointer;
+          img {
+            margin: auto;
+          }
+
+          p {
+            width: 83%;
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+
+  #right-content {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    header {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-top: 1vh;
+
+      .create-account-message {
+        color: var(--dark-gray);
+      }
+
+      .create-account-button {
+        display: flex;
+        flex-direction: row;
+        background: var(--dark-blue) 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px var(--third-gray);
+        border-radius: 4px;
+        opacity: 1;
+
+        width: 6.5vw;
+        height: 4.5vh;
+        margin: auto 2vh;
+
+        cursor: pointer;
+
+        img {
+          margin: auto;
+          align-items: center;
+        }
+        p {
+          margin: auto;
+          color: var(--white);
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,8 @@
-import Login from './pages/Login'
-//import UserRegisterForm from './components/UserRegisterForm';
+import Routes from './routes'
 
 function App() {
   return (
-    <Login />
-    //<UserRegisterForm />
+    <Routes />
   );
 }
 
