@@ -12,7 +12,7 @@ import BluePencil from '../../assets/Agendar/edit (1).png'
 import UserIcon from '../../assets/Agendar/user.png'
 import LogoutIcon from '../../assets/Agendar/logout.png'
 
-const PrivateLayout = () => {
+const PrivateLayout = ({children}) => {
     const history = useHistory();
 
     return(
@@ -48,7 +48,7 @@ const PrivateLayout = () => {
                                     </p>
                                 </div>
 
-                                <div className="logout-button">
+                                <div className="logout-button" onClick={() => history.push('/login')}>
                                     <img src={LogoutIcon} alt=''/>
                                     <p>
                                         Sair
@@ -81,9 +81,10 @@ const PrivateLayout = () => {
                 </div>
             </div>
 
-            <div>
-                
+            <div id="schedule-content">
+                {children}
             </div>
+
         </div>
     );
 }

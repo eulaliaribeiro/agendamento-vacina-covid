@@ -1,17 +1,7 @@
-.login-form {
-  width: 24vw;
+.schedule-card {
+  width: 20vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: auto;
-
-  #login-form-title {
-    margin: 4vh 0 1vh 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--light-blue);
-  }
 
   form {
     display: flex;
@@ -23,15 +13,30 @@
     border-radius: 6px;
     opacity: 1;
 
+    .campain-label {
+      padding-top: 3vh;
+    }
+
     label {
       display: flex;
       flex-direction: column;
       justify-content: center;
       margin: 1vh 0;
 
-      input {
-        width: 18vw;
-        height: 6vh;
+      .schedule-select {
+        width: 15vw;
+        height: 4vh;
+        border: 1px solid var(--second-gray);
+        border-radius: 4px;
+        opacity: 1;
+        font-family: inherit;
+        font-size: 100%;
+        font-weight: 400;
+      }
+
+      .input-date {
+        width: 15vw;
+        height: 4vh;
         border: 1px solid var(--second-gray);
         border-radius: 4px;
         opacity: 1;
@@ -41,22 +46,10 @@
       }
     }
 
-    .forgot-password {
-      width: 100%;
-      display: inline-block;
-      text-align: right;
-      margin: 2vh 0 1vh 0;
-
-      a {
-        text-decoration: none;
-        margin-right: 6vh;
-      }
-    }
-
     .button-content {
       margin: 2vh 0 6vh 0;
       .form-button {
-        width: 18vw;
+        width: 15vw;
         height: 6vh;
         display: flex;
         align-items: center;
