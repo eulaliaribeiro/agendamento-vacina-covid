@@ -1,0 +1,309 @@
+.schedule-card {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 3px 6px #0000001a;
+    border: 1px solid var(--third-gray);
+    border-radius: 6px;
+    opacity: 1;
+
+    .campain-label {
+      padding-top: 3vh;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 1vh 0;
+
+      .schedule-select {
+        width: 15vw;
+        height: 4vh;
+        border: 1px solid var(--second-gray);
+        border-radius: 4px;
+        opacity: 1;
+        font-family: inherit;
+        font-size: 100%;
+        font-weight: 400;
+      }
+
+      .input-date {
+        width: 15vw;
+        height: 4vh;
+        border: 1px solid var(--second-gray);
+        border-radius: 4px;
+        opacity: 1;
+        font-family: inherit;
+        font-size: 100%;
+        font-weight: 400;
+      }
+    }
+
+    .button-content {
+      margin: 2vh 0 6vh 0;
+      .form-button {
+        width: 15vw;
+        height: 6vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+
+        background: var(--light-blue) 0% 0% no-repeat padding-box;
+        border-radius: 4px;
+        opacity: 1;
+
+        cursor: pointer;
+
+        p {
+          margin: auto;
+          color: var(--white);
+          font-weight: bold;
+        }
+      }
+    }
+
+    .form-button {
+      width: 25vw;
+      height: 6vh;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+
+      background: var(--light-blue) 0% 0% no-repeat padding-box;
+      border-radius: 4px;
+      opacity: 1;
+
+      cursor: pointer;
+
+      p {
+        margin: 1vh;
+        color: var(--white);
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.avaiable-times-panel {
+  width: 51vw;
+  display: flex;
+  flex-direction: column;
+  margin-left: 3vw;
+
+  background: var(--white) 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 4px;
+  opacity: 1;
+
+  .avaiable-times-header {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+
+    .title {
+      font-size: 162.5%;
+      color: var(--dark-blue);
+      margin: 2vh 0 1vh 2vw;
+    }
+  }
+
+  .times-and-vacancies-container {
+    width: 88%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 1vh 2vw;
+
+    .times-and-vacancies-title {
+      font-size: 112.5%;
+      font-weight: 500;
+      margin-top: 1vh;
+      margin-bottom: 2vh;
+    }
+
+    .times-and-vacancies-buttons {
+      display: grid;
+      grid-gap: 1vw 1vw;
+      grid-template-columns: auto auto auto auto auto;
+
+      .time-and-vacancy-button {
+        all: unset;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border: 1px solid var(--dark-blue);
+        border-radius: 4px;
+
+        cursor: pointer;
+        height: 4.8vh;
+
+        font-size: 87.5%;
+        font-weight: 500;
+
+        .time {
+          width: 50%;
+          background-color: var(--white);
+          color: var(--dark-gray);
+          text-align: center;
+          margin: 0 auto 0 auto;
+          p {
+            margin: 1.1vh auto 1.1vh auto;
+          }
+        }
+
+        .vacancies {
+          width: 50%;
+          background-color: var(--dark-blue);
+          color: var(--white);
+          text-align: center;
+          margin: 0 auto 0 auto;
+          p {
+            margin: 1.1vh auto 1.1vh auto;
+          }
+        }
+      }
+    }
+
+    .horizontal-line {
+      border: solid 1px #92929257;
+      margin-top: 4vh;
+      margin-bottom: 1vh;
+    }
+  }
+}
+
+.confirm-schedule-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.75); /* Black w/ opacity */
+
+  .confirm-schedule-content {
+    width: 56vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin: 10vh auto;
+    background: var(--white) 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+
+    .confirm-schedule-title {
+      font-size: 187.5%;
+      color: var(--light-blue);
+      font-weight: bold;
+      text-align: left;
+      margin: 3vh 0 3vh 2vw;
+    }
+
+    .confirm-schedule-subtitle {
+      display: flex;
+      flex-direction: row;
+      font-size: 150%;
+      text-align: left;
+      margin: 0 0 0 2vw;
+      font-weight: bold;
+
+      .date-and-hour {
+        margin: 0;
+        color: var(--dark-blue);
+      }
+
+      .status {
+        margin: 0;
+        color: var();
+      }
+    }
+
+    .confirm-schedule-text {
+      width: 93.75%;
+      text-align: left;
+      margin: auto;
+
+      .confirm-schedule-text-title {
+        color: var(--dark-blue);
+        font-weight: bold;
+      }
+
+      .horizontal-line {
+        border: solid 1px #92929257;
+      }
+    }
+
+    .appointment-information {
+      width: 93.75%;
+      text-align: left;
+      margin: 2vh 0 0 2vw;
+
+      .information {
+        display: flex;
+        flex-direction: row;
+
+        p:first-child {
+          color: var(--dark-blue);
+          font-weight: bold;
+          margin: 0 0 1vh 0;
+        }
+
+        p:nth-child(2) {
+          color: var(--dark-blue);
+          margin: 0 0 1vh 1vw;
+        }
+      }
+    }
+
+    .confirm-schedule-buttons {
+      display: flex;
+      flex-direction: row-reverse;
+
+      .cancel-button {
+        width: 12vw;
+        height: 4.5vh;
+        display: flex;
+        flex-direction: column;
+        background: var(--red) 0% 0% no-repeat padding-box;
+        border-radius: 4px;
+        opacity: 1;
+        cursor: pointer;
+        margin: 3vh 0 4vh 3vw;
+        float: right;
+        p {
+          color: var(--white);
+          font-weight: bold;
+          margin: auto;
+        }
+      }
+
+      .confirm-button {
+        width: 12vw;
+        height: 4.5vh;
+        display: flex;
+        flex-direction: column;
+        background: var(--green) 0% 0% no-repeat padding-box;
+        border-radius: 4px;
+        opacity: 1;
+        cursor: pointer;
+        margin: 3vh 2vw 4vh 3vw;
+        float: right;
+        p {
+          color: var(--white);
+          font-weight: bold;
+          margin: auto;
+        }
+      }
+    }
+  }
+}

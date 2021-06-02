@@ -61,8 +61,7 @@ const PrivateLayout = ({children}) => {
 
 
 
-                    <div id="horizontal-line" style={{border: `solid 1px #92929257`, width: `100%`}}>
-                    </div>
+                    <div id="horizontal-line" style={{border: `solid 1px #92929257`, width: `100%`}}/>
 
                     <div className="sidebar-buttons">
                         <div className="my-schedules-button" type="submit" onClick={() => history.push('/meus-agendamentos')}>

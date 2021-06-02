@@ -9,7 +9,7 @@ const UserRegisterForm = () => {
     const [validateRegister, setValidateRegister] = useState(false)
     const [handleClick, setHandleClick] = useState(false)
 
-    let modal = document.getElementById("terms-modal")    
+    const [modal, setModal] = useState(false)    
 
     const validateEmail = (e) => {
       var email = e.target.value
@@ -75,7 +75,7 @@ const UserRegisterForm = () => {
 
             { (validateRegister && handleClick) && 
                 <p className="terms-and-politics">
-                    Ao assinar você concorda com os <button id="terms-button" onClick={() => modal.style.display="block"}>termos de serviço</button> e <button id="politics-button" onClick={() => modal.style.display="block"}>política de privacidade</button>
+                    Ao assinar você concorda com os <button id="terms-button" onClick={() => setModal(!modal)}>termos de serviço</button> e <button id="politics-button" onClick={() => setModal(!modal)}>política de privacidade</button>
                 </p>
             }
 
@@ -99,7 +99,7 @@ const UserRegisterForm = () => {
                         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
                     </p>
 
-                    <div id="terms-modal-close-button" onClick={() => modal.style.display="none"}>
+                    <div id="terms-modal-close-button" onClick={() => setModal(!modal)}>
                         <p>
                             Fechar
                         </p> 

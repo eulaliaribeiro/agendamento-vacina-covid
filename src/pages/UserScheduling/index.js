@@ -2,7 +2,7 @@ import React from 'react'
 // import { useHistory } from 'react-router-dom'
 
 import PrivateLayout from '../../Layouts/PrivateLayout'
-import ScheduleCard from '../../components/ScheduleCard'
+import ScheduleContainer from '../../components/ScheduleContainer'
 import SearchIcon from '../../assets/Agendar/Icon ionic-ios-search.png'
 
 
@@ -23,7 +23,7 @@ const UserScheduling = () => {
                 </div>
             </header>
             <div className="schedule-container">
-                <ScheduleCard/>
+                <ScheduleContainer/>
             </div>
         </PrivateLayout>
     )

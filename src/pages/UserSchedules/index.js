@@ -11,15 +11,19 @@ const UserSchedules = () => {
     
     return(
         <PrivateLayout>
-            <header>
+            <header className="private-header">
                 <p className="title">
                     Meus agendamentos
                 </p>
-                <input className="search" placeholder="Pesquisar">
-                    <img src={SearchIcon} alt='Lupa'/>
-                </input>
+                
+                <div className="search-container">
+                 <input className="search" placeholder="Pesquisar"/>
+                 <img className="search-icon" src={SearchIcon} alt='Lupa' />
+                </div>
             </header>
-            
+            <div className="schedules-container">
+                {/* cards dos agendamentos do usuário */}
+            </div>
         </PrivateLayout>
     )
 }
