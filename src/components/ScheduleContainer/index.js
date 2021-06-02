@@ -75,7 +75,7 @@ const ScheduleContainer = () => {
       {result.length === 0 && 
         <div className="unavaiable-times-container">
           <p>
-            Sem horários disponíveis para a data selecionada!
+            Selecione uma data que possua horários disponíveis!
           </p>
         </div>
       }

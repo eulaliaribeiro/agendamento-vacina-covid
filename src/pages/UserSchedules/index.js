@@ -3,6 +3,7 @@ import React from 'react'
 
 import PrivateLayout from '../../Layouts/PrivateLayout'
 import SearchIcon from '../../assets/Agendar/Icon ionic-ios-search.png'
+import FilterIcon from '../../assets/MeusAgendamentos/Icon awesome-filter.png'
 
 
 const UserSchedules = () => {
@@ -21,8 +22,18 @@ const UserSchedules = () => {
                  <img className="search-icon" src={SearchIcon} alt='Lupa' />
                 </div>
             </header>
+            <div className="filter-appointments">
+                <p>Filtrar agendamento</p>
+                <div className="filter-container">
+                    <img className="filter-icon" src={FilterIcon} alt=''/>
+                    <select className="filter-select">
+                        <option>Local de vacinação</option>
+                        <option>Data</option>
+                    </select>
+                </div>
+            </div>
             <div className="schedules-container">
-                {/* cards dos agendamentos do usuário */}
+                {/* TODO cards dos agendamentos do usuário */}
             </div>
         </PrivateLayout>
     )
