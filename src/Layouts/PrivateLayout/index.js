@@ -1,19 +1,29 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import './styles.less';
 
 import BlueCalendarImage from '../../assets/Agendar/Icon feather-calendar@2x.png'
 import ProfileIcon from '../../assets/Agendar/Ellipse 1.png'
 import DownArrow from '../../assets/Agendar/arrow-down.png'
-// import WhiteFolder from '../../assets/Agendar/folder (3).png'
+import WhiteFolder from '../../assets/Agendar/folder (3).png'
 import BlueFolder from '../../assets/Agendar/folder (1).png'
-// import WhitePencil from '../../assets/Agendar/edit (3).png'
+import WhitePencil from '../../assets/Agendar/edit (3).png'
 import BluePencil from '../../assets/Agendar/edit (1).png'
 import UserIcon from '../../assets/Agendar/user.png'
 import LogoutIcon from '../../assets/Agendar/logout.png'
 
 const PrivateLayout = ({children}) => {
-    const history = useHistory();
+    const history = useHistory()
+    const location = useLocation();
+    
+    const selectedMenuNav = (menuName) => {
+        const pathName = location.pathname
+
+        if (pathName !== `${menuName}`) {
+            return false
+        }
+        return true
+    }
 
     return(
         <div id="container">
@@ -63,15 +73,15 @@ const PrivateLayout = ({children}) => {
 
                     <div id="horizontal-line" style={{border: `solid 1px #92929257`, width: `100%`}}/>
 
-                    <div className="sidebar-buttons">
-                        <div className="my-schedules-button" type="submit" onClick={() => history.push('/meus-agendamentos')}>
-                            <img src={BlueFolder} alt='Ícone de pasta'/>
+                    <div className="sidebar-menu">
+                        <div className={`menu-item-button ${selectedMenuNav('/meus-agendamentos') && 'active'}`} type="submit" onClick={() => history.push('/meus-agendamentos')}>
+                            <img src={selectedMenuNav('/meus-agendamentos') ?  WhiteFolder : BlueFolder} alt='Ícone de pasta'/>
                             <p>
                                 Meus agendamentos
                             </p>
                         </div>
-                        <div className="schedule-button" type="submit" onClick={() => history.push('/agendar')}>
-                            <img src={BluePencil} alt='Ícone de lápis'/>
+                        <div className={`menu-item-button ${selectedMenuNav('/agendar') && 'active'}`}type="submit" onClick={() => history.push('/agendar')}>
+                            <img src={selectedMenuNav('/agendar') ?  WhitePencil : BluePencil} alt='Ícone de lápis'/>
                             <p>
                                 Agendar
                             </p>

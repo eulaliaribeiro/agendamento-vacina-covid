@@ -19,11 +19,16 @@ const ScheduleContainer = () => {
   const history = useHistory()
 
   const [date, setDate] = useState("")
+  const [dateText, setDateText] = useState("")
+  
   const [city, setCity] = useState("")
   const [modal, setModal] = useState(false)
   const [data, setData] = useState([]);
   const [result, setResult] = useState([])
-  const [mode, setMode] = useState(false)
+
+  const [selectedAppointment, setSelectedAppointment] = useState('')
+  const [currentTime, setCurrentTime] = useState('')
+  const [currentLocation, setCurrentLocation] = useState('')
 
   useEffect(() => {
     api
@@ -35,11 +40,42 @@ const ScheduleContainer = () => {
     .catch((response) => {
       console.log(response)
     })
-  }, [date, city])
+  }, [])
 
   useEffect(() => {
-    setResult(data.filter(item => item.data === formatDate(date)).filter(item => item.municipio === city))
-  }, [mode, date, city, data])
+    handleSearch()
+    //eslint-disable-next-line
+  }, [data])
+
+  const handleSearch = () => {
+    let resultado = data
+    if(date){
+      resultado = resultado.filter(item => item.data === formatDate(date))
+      setDateText(dateInitial(date))
+    }
+    if(city){
+      resultado = resultado.filter(item => item.municipio === city)
+    }
+    setResult(resultado)
+  }
+
+  useEffect(() => {
+    api
+    .get(`/agendamentos/`,
+    )
+    .then(({data}) => {
+      setSelectedAppointment(data.data)
+    })
+    .catch((response) => {
+      console.log(response)
+    })
+  }, [selectedAppointment])
+
+  const modalSetData = (modal, time, location) => {
+    setModal(!modal)
+    setCurrentTime(time)
+    setCurrentLocation(location)
+  }
 
   return(
     <>
@@ -54,6 +90,7 @@ const ScheduleContainer = () => {
             <label>
               Município
               <select value={city} className="schedule-select" onChange={e => {setCity(e.target.value)}}>
+                <option value="">Selecione uma cidade</option>
                 <option value="Natal">Natal</option>
                 <option value="Mossoró">Mossoró</option>
               </select>
@@ -63,7 +100,7 @@ const ScheduleContainer = () => {
               <input value={date} type='date' className="input-date" required={true} onChange={e => {setDate(e.target.value)}} />
             </label>
             <div className="button-content">
-              <div className="form-button" onClick={() => setMode(!mode)}>
+              <div className="form-button" onClick={() => handleSearch()}>
                 <p>
                   Procurar
                 </p>
@@ -71,20 +108,12 @@ const ScheduleContainer = () => {
             </div>
         </form>
       </div>
-      
-      {result.length === 0 && 
-        <div className="unavaiable-times-container">
-          <p>
-            Selecione uma data que possua horários disponíveis!
-          </p>
-        </div>
-      }
 
-      {result.length > 0 && 
-      (<div className="avaiable-times-panel" >
+
+      <div className="avaiable-times-panel" >
         <header className="avaiable-times-header">
             <p className="title">
-                Locais de vacinação - {date && dateInitial(date)}
+                Locais de vacinação {dateText &&  ` - ${dateText}`}
             </p>
         </header>
 
@@ -94,31 +123,28 @@ const ScheduleContainer = () => {
                 {item.localizacao} | Covid-19 | 8h às 16h
               </p>
               <div className="times-and-vacancies-buttons">
-                {item.vagas && Object.entries(item.vagas).map((horario) => (<button className="time-and-vacancy-button" onClick={() => setModal(!modal)}><div className="time"><p>{horario[0]}00</p></div><div className="vacancies"><p>{horario[1]} vagas</p></div></button>))}
+                {item.vagas && Object.entries(item.vagas).filter(horario => horario[1] > 0).map((horario) => (<button className="time-and-vacancy-button" onClick={() => modalSetData(modal, horario[0], item.localizacao)}><div className="time"><p>{horario[0]}00</p></div><div className="vacancies"><p>{horario[1]} vagas</p></div></button>))}
               </div> 
               <div className="horizontal-line"/>
             </div>
           ))
         }
       </div>
-      )}
+      
 
       {/*quando o usuário clicar no botão de horário desejado, aparecerá o modal do comprovante de agendamento, no qual
       o usuário pode confirmar o agendamento ou cancelar e voltar para a o painel de horários disponíveis */}
 
       {modal && 
-      <div className="confirm-schedule-modal" style={{display: `block`}} >
+      <div className="confirm-schedule-modal" style={{ display: `block`}}>
         <div className="confirm-schedule-content">
           <p className="confirm-schedule-title">
-            Comprovante de agendamento
+            Confirmar agendamento
           </p>
 
           <div className="confirm-schedule-subtitle">
             <p className="date-and-hour">
-            {date && dateInitial(date)} - {/* TODO {hour} */}
-            </p>
-            <p className="status">
-              {/* TODO {status} */}
+            {date && dateInitial(date)} - {currentTime}
             </p>
           </div>
 
@@ -127,7 +153,7 @@ const ScheduleContainer = () => {
               Orientações
             </p>
             <ul style={{color: 'red'}}>
-              <li >
+              <li>
               Caso sejam informados dados falsos relacionados ao seu agendamento, ele poderá ser cancelado a critério do vacinador ou supervisor da sala de vacina (Art. 299 - Código Penal)
               </li>
               <br/>
@@ -155,12 +181,9 @@ const ScheduleContainer = () => {
               <p>
                 Localização: 
               </p>
-              {/* TODO aparecer apenas a loc do botão clicado */}
-              {result.map(item => (
-                <p>
-                {item.localizacao}
-                </p>
-              ))}
+              <p>
+                {currentLocation}
+              </p>
             </div>
             <div className="information">
               <p>

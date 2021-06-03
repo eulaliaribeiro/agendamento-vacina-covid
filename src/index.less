@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  font-size: 1rem;
   color: var(--dark-gray);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -26,21 +27,26 @@ code {
   --green: #00cf9f;
 }
 
-// TODO: BREAKPOINTS DE FONT-SIZE E IMAGENS
-@media (max-width: 1720px) {
-  html {
-    font-size: 93.25%;
+@media (max-width: 1620px) {
+  body {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 1380px) {
+  body {
+    font-size: 85%;
   }
 }
 
 @media (max-width: 1080px) {
-  html {
-    font-size: 93.25%;
+  body {
+    font-size: 80%;
   }
 }
 
 @media (max-width: 720px) {
-  html {
-    font-size: 93.25%;
+  body {
+    font-size: 70%;
   }
 }

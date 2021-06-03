@@ -42,7 +42,7 @@ const LoginForm = () => {
             </label>
             <span style={{ fontWeight: 'bold', fontSize:'0.8rem', color: 'red',}}>{message}</span>
             <div className="forgot-password">
-              <a href="/">Esqueceu sua senha?</a>
+              <a href="/" style={{cursor:'pointer'}}>Esqueceu sua senha?</a>
             </div>
             <div className="button-content">
               <div className="form-button" type="submit" onClick={() => handleRequest()}>

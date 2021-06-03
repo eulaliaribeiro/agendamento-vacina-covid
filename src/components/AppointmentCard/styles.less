@@ -1,0 +1,218 @@
+.appointment-card-container {
+  width: 17vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 6px;
+  opacity: 1;
+
+  .appointment-card-header {
+    width: 93.75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1vh auto 1vh auto;
+
+    .appointment-card-header-content {
+      display: flex;
+      flex-direction: row;
+
+      .vaccine-icon {
+        margin: auto;
+      }
+
+      .vaccine-type-content {
+        .vaccine-title,
+        .vaccine-type {
+          margin: 0;
+          color: var(--light-blue);
+        }
+
+        .vaccine-title {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .appointment-card-status {
+      font-weight: bold;
+      margin: auto 1vw auto auto;
+    }
+  }
+
+  .horizontal-line {
+    width: 82%;
+    border: solid 1px #92929257;
+    margin: 0 auto 1vh auto;
+  }
+
+  .appointment-card-information {
+    width: 82%;
+    .appointment-location {
+      display: flex;
+      flex-direction: row;
+      margin: 1vh auto 1vh auto;
+      .location-icon {
+        margin: auto;
+      }
+      p {
+        font-size: 125%;
+        margin: auto 0 auto 0.8vw;
+      }
+    }
+
+    .appointment-date-and-time {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 1vh;
+
+      .appointment-date {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 1vh auto 1vh 0;
+        .location-icon {
+          margin: auto 1vw auto 0;
+        }
+        p {
+          font-size: 125%;
+          margin: auto 0 auto 0.5vw;
+        }
+      }
+
+      .appointment-time {
+        display: flex;
+        flex-direction: row;
+        margin: 1vh auto 1vh auto;
+        .location-icon {
+          margin: auto 1vw auto 0;
+        }
+        p {
+          font-size: 125%;
+          margin: auto 0 auto 0.5vw;
+        }
+      }
+    }
+  }
+
+  .appointment-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .details-button {
+      all: unset;
+      width: 50%;
+      background-color: var(--light-blue);
+      border-radius: 0 0 0 4px;
+      color: var(--white);
+      text-align: center;
+      cursor: pointer;
+      p {
+        margin: 1.1vh auto 1.1vh auto;
+      }
+    }
+
+    .cancel-appointment-button {
+      all: unset;
+      width: 50%;
+      background-color: var(--dark-red);
+      border-radius: 0 0 4px 0;
+      color: var(--white);
+      text-align: center;
+      cursor: pointer;
+      p {
+        margin: 1.1vh auto 1.1vh auto;
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 6px;
+    opacity: 1;
+
+    .campain-label {
+      padding-top: 3vh;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 1vh 0;
+
+      .schedule-select {
+        width: 15vw;
+        height: 4vh;
+        border: 1px solid var(--second-gray);
+        border-radius: 4px;
+        opacity: 1;
+        font-family: inherit;
+        font-size: 100%;
+        font-weight: 400;
+      }
+
+      .input-date {
+        width: 15vw;
+        height: 4vh;
+        border: 1px solid var(--second-gray);
+        border-radius: 4px;
+        opacity: 1;
+        font-family: inherit;
+        font-size: 100%;
+        font-weight: 400;
+      }
+    }
+
+    .button-content {
+      margin: 2vh 0 6vh 0;
+      .form-button {
+        width: 15vw;
+        height: 6vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+
+        background: var(--light-blue) 0% 0% no-repeat padding-box;
+        border-radius: 4px;
+        opacity: 1;
+
+        cursor: pointer;
+
+        p {
+          margin: auto;
+          color: var(--white);
+          font-weight: bold;
+        }
+      }
+    }
+
+    .form-button {
+      width: 25vw;
+      height: 6vh;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+
+      background: var(--light-blue) 0% 0% no-repeat padding-box;
+      border-radius: 4px;
+      opacity: 1;
+
+      cursor: pointer;
+
+      p {
+        margin: 1vh;
+        color: var(--white);
+        font-weight: bold;
+      }
+    }
+  }
+}

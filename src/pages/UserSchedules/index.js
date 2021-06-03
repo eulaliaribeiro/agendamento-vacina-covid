@@ -1,15 +1,15 @@
-import React from 'react' 
-// import { useHistory } from 'react-router-dom'
+import React, { useState } from 'react'
 
 import PrivateLayout from '../../Layouts/PrivateLayout'
+import MyAppointmentsContainer from '../../components/MyAppointmentsContainer'
 import SearchIcon from '../../assets/Agendar/Icon ionic-ios-search.png'
 import FilterIcon from '../../assets/MeusAgendamentos/Icon awesome-filter.png'
 
 
 const UserSchedules = () => {
-
-    // const history = useHistory();
     
+    const [filterLocalization, setFilterLocalization] = useState(null)
+
     return(
         <PrivateLayout>
             <header className="private-header">
@@ -22,19 +22,22 @@ const UserSchedules = () => {
                  <img className="search-icon" src={SearchIcon} alt='Lupa' />
                 </div>
             </header>
-            <div className="filter-appointments">
+            <div className="appointments-filter">
                 <p>Filtrar agendamento</p>
                 <div className="filter-container">
                     <img className="filter-icon" src={FilterIcon} alt=''/>
-                    <select className="filter-select">
-                        <option>Local de vacinação</option>
-                        <option>Data</option>
+                    <select className="filter-select" onChange={(e) => setFilterLocalization(e.target.value)}>
+                        <option value="">Selecione um local</option>
+                        <option value="Arena das Dunas">Arena das Dunas</option>
+                        <option value="Via Direta">Via Direta</option>
+                        <option value="SESI">SESI</option>
+                        <option value="UBS Centro">UBS Centro</option>
                     </select>
                 </div>
             </div>
-            <div className="schedules-container">
-                {/* TODO cards dos agendamentos do usuário */}
-            </div>
+ 
+            <MyAppointmentsContainer filterLocalization={filterLocalization}/>
+           
         </PrivateLayout>
     )
 }

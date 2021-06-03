@@ -18,7 +18,7 @@
     }
 
     .private-header {
-      width: 93.75%;
+      width: 90%;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -47,14 +47,14 @@
         }
         .search-icon {
           position: absolute;
-          margin-top: 0.6%;
+          margin-top: 0.65%;
           margin-left: 13.1%;
         }
       }
     }
 
-    .filter-appointments {
-      width: 93.75%;
+    .appointments-filter {
+      width: 90%;
       display: flex;
       flex-direction: column;
 
@@ -155,7 +155,6 @@
         border-radius: 4px;
         opacity: 1;
         z-index: 1;
-        // TODO transition: all 0.2s ease-in;
 
         .dropdown-buttons {
           display: flex;
@@ -200,40 +199,33 @@
         display: block;
       }
 
-      .sidebar-buttons {
+      .sidebar-menu {
         display: flex;
         flex-direction: column;
         margin-top: 2vh;
 
-        .my-schedules-button {
+        .menu-item-button {
+          width: 100%;
+          height: 6vh;
           display: flex;
           flex-direction: row;
-          margin: 2vh 0;
+          margin: 1vh 0;
           cursor: pointer;
+          border-radius: 4px;
 
           img {
-            margin: auto;
+            margin: auto auto auto 0.5vw;
           }
 
           p {
             width: 83%;
-            margin: auto;
+            margin: auto auto auto 0.5vw;
           }
         }
 
-        .schedule-button {
-          display: flex;
-          flex-direction: row;
-          margin: 2vh 0;
-          cursor: pointer;
-          img {
-            margin: auto;
-          }
-
-          p {
-            width: 83%;
-            margin: auto;
-          }
+        .active {
+          color: var(--white);
+          background-color: var(--light-blue);
         }
       }
     }
