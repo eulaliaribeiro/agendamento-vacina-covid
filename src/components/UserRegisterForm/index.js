@@ -11,6 +11,7 @@ const UserRegisterForm = () => {
     const [initial, setInicial] = useState(true)
     const [validateRegister, setValidateRegister] = useState(false)
     const [handleClick, setHandleClick] = useState(false)
+
     const [passwordValidate, setPasswordValidate] = useState("")
     const [confirmPasswordValidate, setConfirmPasswordValidate] = useState("")
 
@@ -98,14 +99,15 @@ const UserRegisterForm = () => {
                 } 
 
                 {!handleClick && <div className="button-content">
-                    <div disabled className="form-button" type="submit" onClick={() =>  setHandleClick(!handleClick)} >
+                <div disabled className="form-button" type="submit" onClick={() =>  setHandleClick(!handleClick)} >
                         <p>
                         Continuar
                         </p>
                     </div>
                 </div>}
 
-                {handleClick && <div className="button-content">
+                {validateRegister && handleClick && 
+                <div className="button-content">
                     <div disabled className="form-button" type="submit" onClick={() =>!passwordValidate && !confirmPasswordValidate && history.push('/meus-agendamentos')} >
                         <p>
                         Cadastrar
@@ -115,18 +117,17 @@ const UserRegisterForm = () => {
 
             </form>
 
-            { (validateRegister && handleClick) && 
+            {validateRegister && handleClick &&
                 <p className="terms-and-politics">
                     Ao assinar você concorda com os <button id="terms-button" onClick={() => setModal(!modal)}>termos de serviço</button> e <button id="politics-button" onClick={() => setModal(!modal)}>política de privacidade</button>
                 </p>
             }
 
-            <div id="terms-modal">
+            {modal && <div id="terms-modal">
                 <div className="terms-modal-content">
                     <p className="terms-modal-title">
                         Termos e Política de Privacidade
                     </p>
-
                     <p className="terms-modal-text">
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
                         Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
@@ -147,7 +148,7 @@ const UserRegisterForm = () => {
                         </p> 
                     </div>
                 </div>
-            </div>
+            </div>}
 
         </div>
     );
