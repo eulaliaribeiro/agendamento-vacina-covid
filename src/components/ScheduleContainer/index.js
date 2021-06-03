@@ -15,11 +15,19 @@ export const dateInitial = (date) => {
   return `${day}/${month}/${year}`
 }
 
+export const dateInitialModal = (date) => {
+  const [day, month, year] = date.split('-')
+
+  return `${day}/${month}/${year}`
+}
+
 const ScheduleContainer = () => {
   const history = useHistory()
 
   const [date, setDate] = useState("")
   const [dateText, setDateText] = useState("")
+
+  const [dateModal, setDateModal] = useState("")
   
   const [city, setCity] = useState("")
   const [modal, setModal] = useState(false)
@@ -71,10 +79,11 @@ const ScheduleContainer = () => {
     })
   }, [selectedAppointment])
 
-  const modalSetData = (modal, time, location) => {
+  const modalSetData = (modal, time, location, date) => {
     setModal(!modal)
     setCurrentTime(time)
     setCurrentLocation(location)
+    setDateModal(date)
   }
 
   return(
@@ -123,7 +132,7 @@ const ScheduleContainer = () => {
                 {item.localizacao} | Covid-19 | 8h às 16h
               </p>
               <div className="times-and-vacancies-buttons">
-                {item.vagas && Object.entries(item.vagas).filter(horario => horario[1] > 0).map((horario) => (<button className="time-and-vacancy-button" onClick={() => modalSetData(modal, horario[0], item.localizacao)}><div className="time"><p>{horario[0]}00</p></div><div className="vacancies"><p>{horario[1]} vagas</p></div></button>))}
+                {item.vagas && Object.entries(item.vagas).filter(horario => horario[1] > 0).map((horario) => (<button className="time-and-vacancy-button" onClick={() => modalSetData(modal, horario[0], item.localizacao, item.data)}><div className="time"><p>{horario[0]}00</p></div><div className="vacancies"><p>{horario[1]} vagas</p></div></button>))}
               </div> 
               <div className="horizontal-line"/>
             </div>
@@ -144,7 +153,7 @@ const ScheduleContainer = () => {
 
           <div className="confirm-schedule-subtitle">
             <p className="date-and-hour">
-            {date && dateInitial(date)} - {currentTime}
+            {dateModal && dateInitialModal(dateModal)} - {currentTime}
             </p>
           </div>
 
